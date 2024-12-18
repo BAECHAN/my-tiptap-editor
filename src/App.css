@@ -1,0 +1,174 @@
+/* Basic document styles */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background: #1d1d1d;
+  font-family: sans-serif;
+  line-height: 1.4;
+  color: #e6e6e6;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+button {
+  background-color: rgba(#ffffff, 0.2);
+  color: rgba(#ffffff, 0.8);
+  border: 2px solid #1d1d1d;
+  border-radius: 0.4em;
+}
+
+button:hover {
+  background-color: rgba(#ffffff, 0.3);
+}
+
+button:disabled {
+  background-color: rgba(#ffffff, 0.1);
+  color: rgba(#ffffff, 0.2);
+}
+
+/* Basic editor styles */
+.tiptap {
+  min-height: calc(100vh - 2rem);
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  > * + * {
+    margin-top: 0.75em;
+  }
+
+  ul,
+  ol {
+    padding: 0 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+  }
+
+  code {
+    background: rgba(#ffffff, 0.1);
+    color: rgba(#ffffff, 0.6);
+    border: 1px solid rgba(#ffffff, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+  }
+
+  pre {
+    background: rgba(#ffffff, 0.1);
+    font-family: "JetBrainsMono", monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+
+    code {
+      color: inherit;
+      padding: 0;
+      background: none;
+      font-size: 0.8rem;
+      border: none;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  blockquote {
+    margin-left: 0;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(#ffffff, 0.4);
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid rgba(#ffffff, 0.1);
+    margin: 2rem 0;
+  }
+}
+
+.menu-bar {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.menu-bar button {
+  color: #000000;
+  background-color: #e0f2f1;
+  border: 1px solid #0d0d0d;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.menu-bar button:hover {
+  background-color: #b2dfdb;
+  color: #000000;
+}
+
+.menu-bar button.is-active {
+  background-color: #0d0d0d;
+  color: white;
+}
+
+.menu-bar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* View 모드일 때 커서 스타일 변경 */
+.ProseMirror[contenteditable="false"] {
+  cursor: default;
+}
+
+/* 코드블록 스타일 */
+.ProseMirror pre {
+  background-color: #666161;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 8px 0;
+}
+
+.ProseMirror code {
+  font-family: "Menlo", "Monaco", "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+.menu-bar button[class="is-active"] {
+  background-color: #0d0d0d;
+  color: white;
+}
+
+/* 색상 버튼 스타일 */
+.menu-bar .color-button.purple {
+  border-bottom: 3px solid #958df1;
+}
+
+.menu-bar .color-button.red {
+  border-bottom: 3px solid #f98181;
+}
+
+.menu-bar .color-button.green {
+  border-bottom: 3px solid #78d6b3;
+}
+
+.menu-bar .color-button.orange {
+  border-bottom: 3px solid #ffbd7a;
+}
